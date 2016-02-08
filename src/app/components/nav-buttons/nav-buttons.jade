@@ -1,5 +1,7 @@
-.navbuttons
-  a.prev(ng-click="eventDetails.goPrev()" ng-if="!eventDetails.prev") Start Over
-  a.prev(ng-click="eventDetails.goPrev()" ng-if="eventDetails.prev") Previous
-  a.next(ng-if="eventDetails.next" ng-click="eventDetails.goNext(eventDetailsForm.$valid)") Next
-  a.submit(ng-if="!eventDetails.next" ng-click="eventDetails.submit()") Send it!
+.row
+  .small-12.columns
+    .navbuttons
+      a.prev.button-text(ng-click="eventDetails.goPrev()" ng-if="!eventDetails.prev") Start Over
+      a.prev.button(ng-click="eventDetails.goPrev()" ng-if="eventDetails.prev") Previous
+      a.next.button(ng-if="eventDetails.next" ng-click="eventDetails.goNext(eventDetailsForm.$valid)") Next
+      a.submit.button(ng-if="!eventDetails.next" ng-click="eventDetails.submit()") Send it!
