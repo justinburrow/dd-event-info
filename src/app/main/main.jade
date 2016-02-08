@@ -1,0 +1,23 @@
+h1 We're excited to play at your event.
+  form(name="eventGeneralForm")
+  
+    label(for="eventDate") When is your event?
+      input(type="date" ng-model="dd.eventInfo.eventDate" required name="eventDate")
+      .error-msg(ng-messages="eventGeneralForm.eventType.$error" ng-show="dd.submitCheck")
+        div(ng-messages-include="app/error-messages.html")
+    
+    label(for="eventType") What kind of event?
+      select(ng-model="dd.eventInfo.eventType" name="eventType" required)
+        option(selected="selected" disabled="disabled" value='') Choose an Event Type
+        option(ng-repeat="eventType in dd.eventOptions" value="{{eventType}}") {{eventType}}
+      .error-msg(ng-messages="eventGeneralForm.eventType.$error" ng-show="dd.submitCheck")
+        div(ng-messages-include="app/error-messages.html")
+        
+    label(for="eventLength") How long would you like us to perform?
+      select(ng-model="dd.eventInfo.eventLength" name="eventLength" required)
+        option(selected="selected" disabled="disabled" value='') Select a Timeframe
+        option(ng-repeat="eventLength in dd.eventLengthOptions" value="{{eventLength}}") {{eventLength}}
+      .error-msg(ng-messages="eventGeneralForm.eventLength.$error" ng-show="dd.submitCheck")
+        div(ng-messages-include="app/error-messages.html")
+        
+  a.button(ng-click="dd.start(eventGeneralForm.$valid)") Next Step

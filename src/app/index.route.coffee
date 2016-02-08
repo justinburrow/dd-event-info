@@ -1,10 +1,10 @@
 angular.module 'ddEventInfo'
-  .config ($stateProvider, $urlRouterProvider) ->
+  .config ($stateProvider, $urlRouterProvider, $locationProvider) ->
     $stateProvider
-      .state 'home',
+      .state 'start',
         url: '/'
         templateUrl: 'app/main/main.html'
-        controller: 'MainController'
-        controllerAs: 'main'
 
     $urlRouterProvider.otherwise '/'
+    
+    $locationProvider.html5Mode true

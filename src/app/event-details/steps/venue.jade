@@ -1,0 +1,19 @@
+h1 Venue
+
+label(for="venueName") Name of the venue
+  input(type="text" ng-model="eventDetails.venueInfo.name" name="venueName" placeholder="Enter the name of the venue" required)
+  .error-msg(ng-messages="eventDetailsForm.venueName.$error" ng-show="dd.submitCheck")
+    div(ng-messages-include="app/error-messages.html")
+    
+label(for="venueAddress") Venue Address
+  textarea(rows="5" ng-model="eventDetails.venueInfo.address" name="venueAddress" placeholder="Street Address, City, Zip and State" required)
+  .error-msg(ng-messages="eventDetailsForm.venueAddress.$error" ng-show="dd.submitCheck")
+    div(ng-messages-include="app/error-messages.html")
+    
+label(for="eventSize") About how many people does it hold?
+  select(ng-model="dd.eventInfo.eventSize" name="eventSize" required)
+    option(selected="selected" disabled="disabled" value='') Number of Guests
+    option(ng-repeat="eventSize in dd.sizeOptions" value="{{eventSize}}") {{eventSize}}
+  .error-msg(ng-messages="eventGeneralForm.eventSize.$error" ng-show="dd.submitCheck")
+    div(ng-messages-include="app/error-messages.html")
+  

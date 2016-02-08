@@ -1,0 +1,22 @@
+.progress-bar {
+  text-align: center;
+  .step {
+    display: inline-block;
+    margin-right: 30px;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    border: 1px solid black;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  .current {
+    color: red;
+    font-weight: bold;
+  }
+  .hidden {
+    display: none;
+  }
+}

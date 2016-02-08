@@ -1,0 +1,27 @@
+h1 Requirements
+
+label(for="setup") What band setup would you like?
+  select(ng-model="dd.eventDetails.bandOptions" name="setup" required)
+    option(selected="selected" disabled="disabled" value='') Duo, Trio, Horn Section - your choice
+    option(ng-repeat="bandOption in dd.bandOptions" value="{{bandOption}}") {{bandOption}}
+  .error-msg(ng-messages="eventDetailsForm.setup.$error" ng-show="dd.submitCheck")
+    div(ng-messages-include="app/error-messages.html")
+div(ng-show="dd.eventDetails.bandOptions == 'Multiple Options'")
+  textarea(rows="3" ng-model="dd.eventDetails.bandOptionsInfo" placeholder="Please provide some more information about the types of band setups you'd like us to provide.")
+
+label(for="sound") Will we need to provide the sound system?
+  select(ng-model="dd.eventDetails.sound" name="sound" required)
+    option(selected="selected" disabled="disabled" value='') Select an Option
+    option(value="yes") Yes
+    option(value="no") No
+    option(value="unsure") I'm not sure
+    
+div(ng-show="dd.eventDetails.sound == 'no'")
+  | Venues and sound system arrangements can be tricky.  Sometimes, a venue will offer a provided sound system, but it may only be large enough to accommodate one microphone, or a DJ - not a full band.  To be on the safe side and avoid any unwelcome surprises, it's best to double check on this before the date of the event.
+
+label(for="inside") Will we be performing inside or outside?
+  select(ng-model="dd.eventDetails.inside" name="inside" required)
+    option(selected="selected" disabled="disabled" value='') Select an Option
+    option(value="yes") Inside
+    option(value="no") Outside
+    option(value="both") Locations change during the event

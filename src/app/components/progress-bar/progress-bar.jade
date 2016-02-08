@@ -1,0 +1,3 @@
+.progress-bar
+  .step(ng-repeat="step in eventDetails.stepList" ui-sref-active="current") {{$index+1}}
+    .hidden(ui-sref="{{step}}") 

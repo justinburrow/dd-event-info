@@ -1,0 +1,5 @@
+.navbuttons
+  a.prev(ng-click="eventDetails.goPrev()" ng-if="!eventDetails.prev") Start Over
+  a.prev(ng-click="eventDetails.goPrev()" ng-if="eventDetails.prev") Previous
+  a.next(ng-if="eventDetails.next" ng-click="eventDetails.goNext(eventDetailsForm.$valid)") Next
+  a.submit(ng-if="!eventDetails.next" ng-click="eventDetails.submit()") Send it!

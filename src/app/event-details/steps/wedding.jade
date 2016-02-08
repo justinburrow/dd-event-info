@@ -1,0 +1,33 @@
+h1 Wedding
+
+label(for="ceremonyTime") Ceremony Portion 
+  input(type="checkbox" ng-model="eventDetails.wedding.ceremony" name="ceremonyTime" value="Ceremony")
+select(ng-if="eventDetails.wedding.ceremony" name="ceremonyTime" ng-model="eventDetails.wedding.ceremonyPlayTime" required)
+  option(selected="selected" disabled="disabled" value="") How long will we be performing during this portion?
+  option(ng-repeat="length in dd.eventLengthOptions" value="{{length}}") {{length}}
+.error-msg(ng-messages="eventDetailsForm.ceremonyPlayTime.$error" ng-show="dd.submitCheck")
+  div(ng-messages-include="app/error-messages.html")
+
+label(for="cocktailTime") Cocktail Hour Portion   
+  input(type="checkbox" ng-model="eventDetails.wedding.cocktail" name="cocktailTime" value="Cocktail Hour")
+select(ng-if="eventDetails.wedding.cocktail" name="cocktailTime" ng-model="eventDetails.wedding.cocktailPlayTime" required)
+  option(selected="selected" disabled="disabled" value="") How long will we be performing during this portion?
+  option(ng-repeat="length in dd.eventLengthOptions" value="{{length}}") {{length}}
+.error-msg(ng-messages="eventDetailsForm.cocktailTime.$error" ng-show="dd.submitCheck")
+  div(ng-messages-include="app/error-messages.html")
+
+label(for="dinnerTime") Dinner Portion   
+  input(type="checkbox" ng-model="eventDetails.wedding.dinner" name="dinnerTime" value="Dinner")
+select(ng-if="eventDetails.wedding.dinner" name="dinnerTime" ng-model="eventDetails.wedding.dinnerPlayTime" required)
+  option(selected="selected" disabled="disabled" value="") How long will we be performing during this portion?
+  option(ng-repeat="length in dd.eventLengthOptions" value="{{length}}") {{length}}
+.error-msg(ng-messages="eventDetailsForm.dinnerTime.$error" ng-show="dd.submitCheck")
+  div(ng-messages-include="app/error-messages.html")
+    
+label(for="dancingTime") Dancing Portion   
+  input(type="checkbox" ng-model="eventDetails.wedding.dancing" name="dancingTime" value="Dancing")
+select(ng-if="eventDetails.wedding.dancing" name="dancingTime" ng-model="eventDetails.wedding.dancingPlayTime" required)
+  option(selected="selected" disabled="disabled" value="") How long will we be performing during this portion?
+  option(ng-repeat="length in dd.eventLengthOptions" value="{{length}}") {{length}}
+.error-msg(ng-messages="eventDetailsForm.dancingTime.$error" ng-show="dd.submitCheck")
+  div(ng-messages-include="app/error-messages.html")

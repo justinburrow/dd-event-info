@@ -1,1 +1,1 @@
-angular.module 'ddEventInfo', ['ngAnimate', 'ui.router']
+angular.module 'ddEventInfo', ['ngAnimate', 'ngMessages', 'ui.router']
