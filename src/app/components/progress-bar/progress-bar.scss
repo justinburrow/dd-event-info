@@ -1,3 +1,9 @@
+@keyframes BLINK {
+  0% { opacity: .5; }
+  50% { opacity: 1}
+  100% { opacity: .5; }
+}
+
 .progress-bar {
   padding-top: 2%;
   padding-bottom: 2%;

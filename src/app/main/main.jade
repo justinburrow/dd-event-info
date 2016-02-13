@@ -1,16 +1,18 @@
 .main
   .row
     .small-12.columns
-      h1 We're excited to play at your event
+      h1.title We're excited to play at your event
       
-  form(name="eventGeneralForm")
+  form(name="dd.eventGeneralForm")
     
     .row
       .small-12.medium-4.columns
         label(for="eventDate")
           h2 When is your event?
-          input(type="date" ng-model="dd.eventInfo.eventDate" required name="eventDate")
-          .error-msg(ng-messages="eventGeneralForm.eventType.$error" ng-show="dd.submitCheck")
+          div(datepicker date-format="MMMM d, y")
+            input(ng-model="date" type="text" required name="eventDate" placeholder="Select a date")
+          //input(type="date" ng-model="dd.eventInfo.eventDate" required name="eventDate")
+          .error-msg(ng-messages="dd.eventGeneralForm.eventType.$error" ng-show="dd.submitCheck")
             div(ng-messages-include="app/components/error-messages/error-messages.html")
             
       .small-12.medium-4.columns    
@@ -19,7 +21,7 @@
           select(ng-model="dd.eventInfo.eventType" name="eventType" required)
             option(selected="selected" disabled="disabled" value='') Choose an Event Type
             option(ng-repeat="eventType in dd.eventOptions" value="{{eventType}}") {{eventType}}
-          .error-msg(ng-messages="eventGeneralForm.eventType.$error" ng-show="dd.submitCheck")
+          .error-msg(ng-messages="dd.eventGeneralForm.eventType.$error" ng-show="dd.submitCheck")
             div(ng-messages-include="app/components/error-messages/error-messages.html")
             
       .small-12.medium-4.columns  
@@ -28,9 +30,9 @@
           select(ng-model="dd.eventInfo.eventLength" name="eventLength" required)
             option(selected="selected" disabled="disabled" value='') Select a Timeframe
             option(ng-repeat="eventLength in dd.eventLengthOptions" value="{{eventLength}}") {{eventLength}}
-          .error-msg(ng-messages="eventGeneralForm.eventLength.$error" ng-show="dd.submitCheck")
+          .error-msg(ng-messages="dd.eventGeneralForm.eventLength.$error" ng-show="dd.submitCheck")
             div(ng-messages-include="app/components/error-messages/error-messages.html")
             
     .row
       .small-12.columns.center
-        a.button(ng-click="dd.start(eventGeneralForm.$valid)") Let's get started!
+        a.button(ng-click="dd.start(dd.eventGeneralForm.$valid)") Let's get started!

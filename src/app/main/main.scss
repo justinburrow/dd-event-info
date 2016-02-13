@@ -1,3 +1,8 @@
+/* Prevent stupid behavior where placeholder only disappears when you start typing instead of on focus*/
+input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder, textarea:focus:-moz-placeholder { color:transparent; }
+input:focus::-moz-placeholder, textarea:focus::-moz-placeholder { color:transparent; }
+input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder  { color:transparent; }
 
 [ui-view].ng-enter, [ui-view].ng-leave {
   position: absolute;
@@ -33,7 +38,11 @@ h1 {
   color: white;
   text-align: center;
   text-transform: uppercase;
+  font-size: 1.5rem;
   margin-bottom: 30px;
+  &.title {
+    font-size: 2.75rem;
+  }
 }
 
 label h2 {
@@ -74,6 +83,7 @@ a.button-text {
   bottom: -23px;
   text-transform: uppercase;
   position: absolute;
+  animation: BLINK 1s infinite;
 }
 
 .extra-info {
@@ -83,3 +93,29 @@ a.button-text {
   background: rgba(0,0,0,0.5);
   padding: 10px;
 }
+
+.wedding {
+  label {
+    h2 {
+      display: inline-block;
+      font-size: 1rem;
+    }
+  }
+}
+
+.select-contain {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+input[type=checkbox] { display:none; } /* to hide the checkbox itself */
+input[type=checkbox] + label:before {
+  font-family: FontAwesome;
+  display: inline-block;
+  color: white; 
+  font-size: 1.5rem;
+}
+
+input[type=checkbox] + label:before, input[type=checkbox]:checked + label:before,  { position: relative; top: 3px; }
+input[type=checkbox] + label:before { content: "\f096"; letter-spacing: 10px; } /* space between checkbox and label */
+input[type=checkbox]:checked + label:before { content: "\f046"; letter-spacing: 5px; } /* allow space for check mark */
