@@ -4,6 +4,11 @@
 // endbower
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
+body {
+  background: #3d3d3d url('../assets/images/dd-logo.gif') no-repeat center center;
+  background-size: cover
+}
+
 .bgvid {
   position: fixed;
   top: 50%;
@@ -23,6 +28,7 @@
 .margin-bottom {
   margin-bottom: 20px;
 }
+
 /* Do not remove the comments below. It's the markers used by gulp-inject to inject
    all your sass files automatically */
 // injector

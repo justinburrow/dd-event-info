@@ -35,3 +35,15 @@
     display: none;
   }
 }
+
+@media #{$small-only} {
+  .progress-bar {
+    padding: 5% 0;
+    .step {
+      height: 50px;
+      width: 50px;
+      font-size: 25px;
+      line-height: 45px;
+    }
+  }
+}

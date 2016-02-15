@@ -1,8 +1,15 @@
 /* Prevent stupid behavior where placeholder only disappears when you start typing instead of on focus*/
-input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder { color:transparent; }
-input:focus:-moz-placeholder, textarea:focus:-moz-placeholder { color:transparent; }
-input:focus::-moz-placeholder, textarea:focus::-moz-placeholder { color:transparent; }
-input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder  { color:transparent; }
+input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder,
+input:focus:-moz-placeholder, textarea:focus:-moz-placeholder,
+input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder { 
+  color: transparent; 
+}
+
+input.date:focus::-webkit-input-placeholder,
+input.date:focus:-moz-placeholder,
+input.date:focus:-ms-input-placeholder, { 
+  color: black; 
+}
 
 [ui-view].ng-enter, [ui-view].ng-leave {
   position: absolute;
@@ -30,6 +37,11 @@ input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder  { color
 
 .main {
   padding-top: 10%;
+}
+
+input.date::-webkit-input-placeholder::before {
+  content: '\f073   ';
+  font-family: FontAwesome;
 }
 
 h1 {
@@ -119,3 +131,9 @@ input[type=checkbox] + label:before {
 input[type=checkbox] + label:before, input[type=checkbox]:checked + label:before,  { position: relative; top: 3px; }
 input[type=checkbox] + label:before { content: "\f096"; letter-spacing: 10px; } /* space between checkbox and label */
 input[type=checkbox]:checked + label:before { content: "\f046"; letter-spacing: 5px; } /* allow space for check mark */
+
+@media #{$small-only} {
+  h1.title {
+    font-size: 1.6rem;
+  }
+}

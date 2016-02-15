@@ -23,7 +23,7 @@
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <video class="bgvid" autoplay loop>
+    <video class="bgvid" autoplay loop ng-if="!dd.isMobile">
       <source src="assets/dnd.mp4" type="video/mp4">
     </video>
     <div ui-view></div>
