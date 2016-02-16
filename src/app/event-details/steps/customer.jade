@@ -6,28 +6,28 @@
   .small-12.medium-8.medium-offset-2.large-6.large-offset-3.columns.margin-bottom
     label(for="custName")
       h2 What's your name?
-      input(type="text" ng-model="eventDetails.customer.name" name="custName" required placeholder="Enter your first and last name")
+      input(type="text" ng-model="dd.eventDetails.customer.name" name="custName" required placeholder="Enter your first and last name")
       .error-msg(ng-messages="eventDetailsForm.custName.$error" ng-show="dd.submitCheck")
         div(ng-messages-include="app/components/error-messages/error-messages.html")
           
   .small-12.medium-8.medium-offset-2.large-6.large-offset-3.columns.margin-bottom    
     label(for="custEmail")
       h2 E-mail Address
-      input(type="email" ng-model="eventDetails.customer.email" name="custEmail" required placeholder="Enter your e-mail address")
+      input(type="email" ng-model="dd.eventDetails.customer.email" name="custEmail" required placeholder="Enter your e-mail address")
       .error-msg(ng-messages="eventDetailsForm.custEmail.$error" ng-show="dd.submitCheck")
         div(ng-messages-include="app/components/error-messages/error-messages.html")
         
   .small-12.medium-8.medium-offset-2.large-6.large-offset-3.columns.margin-bottom    
     label(for="custPhone")
       h2 Phone Number
-      input(type="tel" ng-model="eventDetails.customer.phone" name="custPhone" required placeholder="Enter your telephone number")
+      input(type="tel" ng-model="dd.eventDetails.customer.phone" name="custPhone" required placeholder="Enter your telephone number")
       .error-msg(ng-messages="eventDetailsForm.custPhone.$error" ng-show="dd.submitCheck")
         div(ng-messages-include="app/components/error-messages/error-messages.html")
         
   .small-12.medium-8.medium-offset-2.large-6.large-offset-3.columns.margin-bottom.end    
     label(for="notes")
       h2 Any additional notes?
-      textarea(rows="3" ng-model="eventDetails.customer.notes" name="notes" placeholder="Additional notes (optional)")
+      textarea(rows="3" ng-model="dd.eventDetails.customer.notes" name="notes" placeholder="Additional notes (optional)")
       
 div(nav-buttons)
   

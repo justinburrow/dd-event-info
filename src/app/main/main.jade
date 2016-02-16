@@ -3,14 +3,15 @@
     .small-12.columns
       h1.title We're excited to play at your event
       
-  form(name="dd.eventGeneralForm")
+  form(name="dd.eventGeneralForm" action="scripts/mailer.php")
     
     .row
       .small-12.medium-4.columns
         label(for="eventDate")
           h2 When is your event?
-          div(datepicker date-format="MMMM d, y")
+          div(datepicker date-format="MMMM d, y" ng-if="!dd.isMobile")
             input.date(ng-model="date" type="text" required name="eventDate" placeholder="Select a Date")
+          input(ng-model="date" type="date" required name="eventDate" placeholder="Select a Date" ng-if="dd.isMobile")
           .error-msg(ng-messages="dd.eventGeneralForm.eventType.$error" ng-show="dd.submitCheck")
             div(ng-messages-include="app/components/error-messages/error-messages.html")
             

@@ -1,7 +1,7 @@
+$button-color: #06a2dc;
+
 /* Prevent stupid behavior where placeholder only disappears when you start typing instead of on focus*/
-input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder,
-input:focus:-moz-placeholder, textarea:focus:-moz-placeholder,
-input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder { 
+input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder, input:focus:-moz-placeholder, textarea:focus:-moz-placeholder, input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder { 
   color: transparent; 
 }
 
@@ -75,7 +75,7 @@ a.button {
   margin-top: 50px;
   transition: background 0.3s ease-in-out;
   &:hover {
-    background: rgba(69,138,203,0.8);
+    background: $button-color;
     transition: background 0.3s ease-in-out;
   }
 }
@@ -135,5 +135,24 @@ input[type=checkbox]:checked + label:before { content: "\f046"; letter-spacing: 
 @media #{$small-only} {
   h1.title {
     font-size: 1.6rem;
+  }
+  input[type="text"], textarea, input[type="date"], input:focus, textarea:focus, textarea:hover, input:hover, select, select:focus, select:hover {
+    font-size: 16px;
+  }
+  input[type="date"]:before {
+    content: attr(placeholder) !important;
+    margin-right: 0.5em;
+    font-size: 16px;
+  }
+  input[type="date"]:focus:before,
+  input[type="date"]:valid:before {
+    content: "" !important;
+    font-size: 16px;
+  }
+  a.button {
+    background: $button-color;
+  }
+  label h2 {
+    margin-top: 20px;
   }
 }
