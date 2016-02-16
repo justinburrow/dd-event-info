@@ -41,6 +41,7 @@ input.date:focus:-ms-input-placeholder, {
 
 input.date::-webkit-input-placeholder::before {
   content: '\f073   ';
+  color: black;
   font-family: FontAwesome;
 }
 
