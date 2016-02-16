@@ -4,7 +4,9 @@ $button-color: #06a2dc;
 input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder, input:focus:-moz-placeholder, textarea:focus:-moz-placeholder, input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder { 
   color: transparent; 
 }
-
+::-webkit-input-placeholder, ::-moz-input-placeholder, ::-ms-input-placeholder {
+  color: black !important;
+}
 input.date:focus::-webkit-input-placeholder,
 input.date:focus:-moz-placeholder,
 input.date:focus:-ms-input-placeholder, { 
