@@ -26,9 +26,9 @@ angular.module('ddEventInfo')
       return
       
       vm.submitter = ->
-        data = 
-          eventDetails = vm.eventDetails
-          eventInfo = vm.eventInfo
+        data =
+          eventDetails: vm.eventDetails
+          eventInfo: vm.eventInfo
         response = $http.post('scripts/mailer.php', data)
         response.success (data, status, headers, config) ->
           console.log 'success'

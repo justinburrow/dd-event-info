@@ -2,10 +2,10 @@ angular.module 'ddEventInfo'
   .config ($stateProvider, $urlRouterProvider, $locationProvider) ->
     $stateProvider
       .state 'start',
-        url: '/'
+        url: '/event-details'
         templateUrl: 'app/main/main.html'
 
-    $urlRouterProvider.otherwise '/'
+    $urlRouterProvider.otherwise '/event-details'
     
     $locationProvider.html5Mode {
       enabled: true,
