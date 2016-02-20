@@ -19,9 +19,9 @@
       h2 Will we need to provide the sound system?
       select(ng-model="dd.eventDetails.sound" name="sound" required)
         option(selected="selected" disabled="disabled" value='') Select an Option
-        option(value="yes") Yes
-        option(value="no") No
-        option(value="unsure") I'm not sure
+        option(value="Yes") Yes
+        option(value="No") No
+        option(value="Unsure") I'm not sure
       .error-msg(ng-messages="eventDetailsForm.sound.$error" ng-show="dd.submitCheck")
         div(ng-messages-include="app/components/error-messages/error-messages.html")
         
@@ -33,9 +33,9 @@
       h2 Will we be performing inside or outside?
       select(ng-model="dd.eventDetails.inside" name="inside" required)
         option(selected="selected" disabled="disabled" value='') Select an Option
-        option(value="yes") Inside
-        option(value="no") Outside
-        option(value="both") Locations change during the event
+        option(value="Inside") Inside
+        option(value="Outside") Outside
+        option(value="Both") Locations change during the event
       .error-msg(ng-messages="eventDetailsForm.inside.$error" ng-show="dd.submitCheck")
         div(ng-messages-include="app/components/error-messages/error-messages.html")
           
