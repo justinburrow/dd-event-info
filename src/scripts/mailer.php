@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *");
 
 $_POST = json_decode(file_get_contents('php://input'), true);
 
@@ -50,4 +51,5 @@ $message = '<b>Client:</b>'. "\n"
                 
 $headers = "From:" . $customer['email'];
 mail($to,$subject,$message,$headers);
+echo 'sent';
 ?>

@@ -9,10 +9,10 @@ angular.module 'ddEventInfo'
       vm.stepList = []
       for state in states
         if $scope.dd.eventInfo.eventType == 'Wedding'
-          if state.abstract != true && state.name != 'start'
+          if state.abstract != true && state.name != 'start' && state.name != 'end'
             vm.stepList.push state.name
         else
-          if state.abstract != true && state.name != 'start' && state.name != 'event-details.wedding'
+          if state.abstract != true && state.name != 'start' && state.name != 'event-details.wedding' && state.name != 'end'
             vm.stepList.push state.name
         
     

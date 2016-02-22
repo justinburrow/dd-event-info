@@ -34,5 +34,5 @@ angular.module 'ddEventInfo'
           templateUrl: 'app/event-details/steps/customer.html'
         }
       }
-    
+      
     $locationProvider.html5Mode true

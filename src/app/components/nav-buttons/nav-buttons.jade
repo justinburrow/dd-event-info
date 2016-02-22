@@ -4,4 +4,4 @@
       a.prev.button-text(ng-click="eventDetails.goPrev()" ng-if="!eventDetails.prev") Start Over
       a.prev.button(ng-click="eventDetails.goPrev()" ng-if="eventDetails.prev") Previous
       a.next.button(ng-if="eventDetails.next" ng-click="eventDetails.goNext(eventDetailsForm.$valid)") Next
-      a.submit.button(ng-if="!eventDetails.next" ng-click="dd.submitter()") Send it!
+      a.submit.button(ng-if="!eventDetails.next" ng-click="dd.submitter(eventDetailsForm.$valid)") Send it!
