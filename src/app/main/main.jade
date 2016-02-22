@@ -11,7 +11,7 @@
           h2 When is your event?
         div(datepicker date-format="MMMM d, y" ng-if="!dd.isMobile")
           input.date(ng-model="dd.eventInfo.eventDate" type="text" required name="eventDate" placeholder="Select a Date")
-        input(ng-model="date" type="dd.eventInfo.eventDate" required name="eventDate" placeholder="Select a Date" ng-if="dd.isMobile")
+        input(ng-model="dd.eventInfo.eventDate" type="date" required name="eventDate" placeholder="Select a Date" ng-if="dd.isMobile")
         .error-msg(ng-messages="dd.eventGeneralForm.eventType.$error" ng-show="dd.submitCheck")
           div(ng-messages-include="app/components/error-messages/error-messages.html")
             
