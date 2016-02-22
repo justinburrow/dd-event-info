@@ -1,7 +1,7 @@
 angular.module('ddEventInfo')
   .controller 'ddCtrl', [
-    'deviceDetector', '$state', '$http',
-    (deviceDetector, $state, $http) ->
+    'deviceDetector', '$state', '$http', '$scope',
+    (deviceDetector, $state, $http, $scope) ->
       vm = this
       vm.deviceDetector = deviceDetector
       
@@ -30,7 +30,7 @@ angular.module('ddEventInfo')
           eventDetails: vm.eventDetails
           eventInfo: vm.eventInfo
         if isFormValid
-          response = $http.post('../scripts/mailer.php', data)
+          response = $http.post('scripts/mailer.php', data)
           response.success (data, status, headers, config) ->
             if data == 'sent'
               $state.go('end')
